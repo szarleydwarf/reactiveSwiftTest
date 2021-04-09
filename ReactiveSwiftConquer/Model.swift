@@ -13,7 +13,7 @@ import Foundation
 //    "senderLink": "",
 //    "quoteLink": "http://forismatic.com/en/9d86f2a8a0/"
 //}
-struct AQuote {
+struct AQuote: Decodable {
     let quoteText:String
     let quoteAuthor :String
 }

@@ -35,8 +35,20 @@ class RestApi {
         return components.url
     }
     
-    func fetch(from url:URL) -> Future<AQuote, NetworkErrors> {
+    func fetch(from url:URL?) -> Future<AQuote, NetworkErrors> {
         
-        return nil
+        return Future<AQuote, NetworkErrors> {promise in
+            guard let url = url else {return promise(.failure(.badURL)) }
+            
+            URLSession.shared.dataTask(with: url) { data, respons, error in
+                guard let fetched = data else {return promise(.failure(.noData))}
+                
+                let decoder = JSONDecoder()
+                guard let model = try? decoder.decode(AQuote.self, from: fetched) else { return promise(.failure(.couldNotDecode))}
+                
+                return promise(.success(model))
+            }
+            
+        }
     }
 }

@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         let apis = RestApi()
         let url = apis.getURL()
         print("URL > \(url)")
+        let q = apis.fetch(from: url)
+        print("Q > \(q)")
     }
 
 
