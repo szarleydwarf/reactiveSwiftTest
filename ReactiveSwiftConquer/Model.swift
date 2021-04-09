@@ -14,6 +14,6 @@ import Foundation
 //    "quoteLink": "http://forismatic.com/en/9d86f2a8a0/"
 //}
 struct AQuote: Decodable {
-    let quoteText:String
-    let quoteAuthor :String
+    let quoteText:String?
+    let quoteAuthor :String?
 }
