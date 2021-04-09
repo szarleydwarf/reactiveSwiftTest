@@ -22,4 +22,8 @@ class RestApi {
         components.queryItems = queryItems
         return components.url
     }
+    
+    func fetch(from url:URL) {
+        
+    }
 }
