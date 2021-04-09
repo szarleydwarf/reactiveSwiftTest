@@ -5,9 +5,21 @@
 //  Created by The App Experts on 09/04/2021.
 //
 
+import Combine
 import Foundation
 
 //https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en
+
+enum NetworkErrors: Error {
+    case badURL
+    case noData
+    case couldNotDecode
+}
+
+protocol RApiProtocol {
+    func getURL() -> URL?
+    func fetch(from url:URL)
+}
 
 class RestApi {
     func getURL() -> URL? {
@@ -23,7 +35,8 @@ class RestApi {
         return components.url
     }
     
-    func fetch(from url:URL) {
+    func fetch(from url:URL) -> Future<AQuote, NetworkErrors> {
         
+        return nil
     }
 }
