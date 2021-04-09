@@ -45,9 +45,10 @@ class RestApi {
                 
                 let decoder = JSONDecoder()
                 guard let model = try? decoder.decode(AQuote.self, from: fetched) else { return promise(.failure(.couldNotDecode))}
-                
-                return promise(.success(model))
-            }
+                DispatchQueue.main.async {
+                    return promise(.success(model))
+                }
+            }.resume()
             
         }
     }
