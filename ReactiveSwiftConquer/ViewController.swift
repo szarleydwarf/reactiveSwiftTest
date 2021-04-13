@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         apis = RestApi()
         callApi()
-        print("Q > \(observer.debugDescription)")
     }
     
     @IBAction func refresh(_ sender: UIButton) {
@@ -28,7 +27,6 @@ class ViewController: UIViewController {
     
     func callApi() {
         let url = apis?.getURL()
-        print("URL > \(url)")
         observer = apis?.fetch(from: url)
             .sink(receiveCompletion: { (completion) in
                 switch completion {
