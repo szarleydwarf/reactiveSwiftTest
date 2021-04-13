@@ -43,13 +43,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Shy-Cz-A3s">
                                 <rect key="frame" x="46" y="764" width="322" height="44"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWz-4G-LJZ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWz-4G-LJZ">
                                         <rect key="frame" x="0.0" y="0.0" width="268" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="qIY-j2-c47"/>
                                             <constraint firstAttribute="width" constant="268" id="wMq-Jj-gN0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5En-Zo-3aV">
@@ -59,6 +60,9 @@
                                             <constraint firstAttribute="height" constant="44" id="YEl-L8-gHX"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="infinity.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="calculate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1D3-ZD-HUg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -90,7 +94,9 @@
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="bYi-Kt-h69" id="akm-Xr-vWS"/>
+                        <outlet property="equasion" destination="JWz-4G-LJZ" id="fpp-eV-7Nw"/>
                         <outlet property="quoteLabel" destination="snm-i1-19s" id="MZf-Rs-RM5"/>
+                        <outlet property="result" destination="gyJ-ub-T8E" id="Gwm-tL-txt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

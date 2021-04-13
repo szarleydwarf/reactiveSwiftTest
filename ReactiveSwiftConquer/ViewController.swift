@@ -11,6 +11,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var quoteLabel: UILabel!
+    @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var equasion: UITextField!
+    
     private var apis:RestApi?
     private var observer:AnyCancellable?
     
@@ -19,6 +22,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         apis = RestApi()
         callApi()
+    }
+    
+    @IBAction func calculate(_ sender: UIButton) {
+        if let str = equasion.text {
+            print("CALCULATING...")
+            let result = Maths().calculate(from: str)
+            self.result.text = result
+        }
     }
     
     @IBAction func refresh(_ sender: UIButton) {
